@@ -1,4 +1,4 @@
-import Report from './Report.js';
+import Report from './ReportDecorator.js';
 
 class Factory {
     constructor() {

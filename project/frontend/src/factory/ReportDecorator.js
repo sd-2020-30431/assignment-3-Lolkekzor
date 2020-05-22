@@ -1,25 +1,28 @@
 import React from 'react';
+import Report from './Report.js';
 
-const reportDecorator = (Component) => {
-    return class extends React.Component {
-        constructor(props) {
-            super(props);
+class ReportDecorator extends React.Component {
+    constructor(props) {
+        super(props);
 
-            if (this.props.burndown > 100) {
-                this.state = {
-                    color: 'red'
-                }
-            } else {
-                this.state = {
-                    color: 'green'
-                }
+        console.log(this.props);
+
+        if (this.props.burndown > 100) {
+            console.log("BIGGER THAN 100");
+            this.state = {
+                color: 'red'
+            }
+        } else {
+            console.log("LESS THAN 100");
+            this.state = {
+                color: 'green'
             }
         }
+    }
 
-        render() {
-            return <Component {...this.props} color={this.state.color}/>
-        }
+    render() {
+        return <Report {...this.props} color={this.state.color}/>
     }
 }
 
-export default reportDecorator;
+export default ReportDecorator;

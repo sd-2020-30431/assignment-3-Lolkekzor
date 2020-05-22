@@ -1,10 +1,10 @@
 import React from 'react';
-import reportDecorator from './ReportDecorator';
 
-@reportDecorator()
 class Report extends React.Component {
     constructor(props) {
         super(props);
+
+        console.log(this.props);
     }
 
     render() {

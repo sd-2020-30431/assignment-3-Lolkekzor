@@ -36,7 +36,6 @@ class ListReportView extends React.Component {
     }
 
     render() {
-        console.log("KEK");
         let Report = this.state.factory.getReport("BURNDOWN");
         return (
             <Report burndown={this.state.burndown}/>

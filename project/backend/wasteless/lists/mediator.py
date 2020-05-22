@@ -34,3 +34,9 @@ class Mediator:
         if serializer.is_valid():
             serializer.save(parent_list=crt_list)
         print(serializer.errors)
+
+    def get_report(self, request, id):
+        crt_list = List.objects.get(id=id)
+        burndown = crt_list.get_burndown_rate()
+
+        return Response(burndown)

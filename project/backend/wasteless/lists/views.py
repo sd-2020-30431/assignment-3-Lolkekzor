@@ -57,3 +57,13 @@ class ListDetailView(APIView):
 
         # return Response()
         return self.mediator.add_list_item(request, id)
+
+
+class ListReport(APIView):
+    def __init__(self):
+        super().__init__()
+
+        self.mediator = Mediator()
+
+    def get(self, request, id):
+        return self.mediator.get_report(request, id)

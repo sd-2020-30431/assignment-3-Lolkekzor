@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import moment from 'moment';
 import axios from 'axios';
 
+import { Link } from 'react-router-dom';
 import Alerts from '../reflux/actions/GlobalAlert';
 
 const schema = yup.object({
@@ -75,7 +76,9 @@ class ListAddForm extends React.Component {
         return (
             <div>
                 <h1> Your list: {this.state.name} </h1>
-                <Button> Get report </Button>
+                <Link to={`/list/${this.state.listId}/report`}>
+                    <Button> Get report </Button>
+                </Link>
                 <hr/>
                 <Table responsive striped bordered hover>
                     <thead>
